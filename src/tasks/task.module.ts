@@ -8,10 +8,3 @@ import { TaskService } from './task.service';
   providers: [TaskService],
 })
 export class TaskModule {}
-
-// @Module({})
-// export class TaskModule {
-//   imports: [];
-//   controller: [TaskController];
-//   provider: [TaskService];
-// }

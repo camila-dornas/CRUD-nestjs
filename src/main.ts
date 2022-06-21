@@ -1,5 +1,4 @@
 import { NestFactory } from '@nestjs/core';
-// import { AppModule } from './app.module';
 import { TaskModule } from './tasks/task.module';
 
 async function bootstrap() {

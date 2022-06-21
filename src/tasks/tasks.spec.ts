@@ -1,7 +1,7 @@
-import { Tasks } from './tasks';
+import { Task } from './tasks';
 
-describe('Tasks', () => {
+describe('Task', () => {
   it('should be defined', () => {
-    expect(new Tasks()).toBeDefined();
+    expect(new Task()).toBeDefined();
   });
 });

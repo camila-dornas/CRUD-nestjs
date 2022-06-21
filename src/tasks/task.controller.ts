@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { TaskService } from './task.service';
 import { Task } from './tasks';
 
@@ -26,4 +34,11 @@ export class TaskController {
     task.id = id;
     return this.taskService.update(task);
   }
+
+  @Delete(':id')
+  delete(@Param('id') id: number) {
+    this.taskService.delete(id);
+  }
 }
+
+// ref: https://docs.nestjs.com/recipes/crud-generator

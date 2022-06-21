@@ -29,4 +29,10 @@ export class TaskService {
     }
     return task;
   } // Altera as informações conforme o id e as descrições do body
-}
+
+  delete(id: number) {
+    const taskById = this.getById(id);
+    this.data.splice(taskById.id - 1, 1);
+  }
+} // O método splice deleta pelo index. Como o index inicia a contagem no nº 0 e o id inicia a contagem no nº 1
+// a posição do index - 1 faz com que o código delete a task correta

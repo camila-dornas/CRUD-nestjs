@@ -1,5 +1,6 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { TaskService } from './task.service';
+import { Task } from './tasks';
 
 @Controller('tasks') // define o nome da rota geral
 export class TaskController {
@@ -14,4 +15,9 @@ export class TaskController {
   getById(@Param('id') id: number) {
     return this.taskService.getById(id);
   }
+
+  @Post()
+  createTask(@Body() task: Task) {
+    return this.taskService.createTask(task);
+  } // precisou retirar o parametro do body para funcionar
 }

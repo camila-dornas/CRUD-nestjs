@@ -20,4 +20,13 @@ export class TaskService {
     this.data.push(task);
     return task;
   } // Cria a nova tarefa, adiciona o id em sequencia e retorna a tarefa criada.
+
+  update(task: Task) {
+    const taskById = this.getById(task.id);
+    if (taskById) {
+      taskById.completed = task.completed;
+      taskById.description = task.description;
+    }
+    return task;
+  } // Altera as informações conforme o id e as descrições do body
 }

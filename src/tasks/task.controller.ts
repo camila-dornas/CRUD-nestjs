@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { TaskService } from './task.service';
 import { Task } from './tasks';
 
@@ -20,4 +20,10 @@ export class TaskController {
   createTask(@Body() task: Task) {
     return this.taskService.createTask(task);
   } // precisou retirar o parametro do body para funcionar
+
+  @Put(':id')
+  update(@Param('id') id: number, @Body() task: Task) {
+    task.id = id;
+    return this.taskService.update(task);
+  }
 }

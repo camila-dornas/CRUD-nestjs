@@ -1,6 +1,6 @@
-import { Tasks } from '../tasks';
+import { Task } from '../tasks';
 
-export const tasks: Tasks[] = [
+export const tasks: Task[] = [
   { id: 1, description: 'teste 1', completed: false },
   { id: 2, description: 'teste 2', completed: true },
   { id: 3, description: 'teste 3', completed: false },
